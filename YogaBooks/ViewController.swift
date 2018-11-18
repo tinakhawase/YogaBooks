@@ -10,9 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var keyLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subjectLabel: UILabel!
+    @IBOutlet weak var ebookCountLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        titleLabel.text = "Yogabooks"
+        
+       let randomSubject = Subject(subjectType: "books",
+                                   name: "insight",
+                                   key: "know",
+                                   ebookCount: 0)
+        subjectLabel.text = randomSubject.subjectType
+        nameLabel.text = randomSubject.name
+        keyLabel.text = randomSubject.key
+        ebookCountLabel.text = String(randomSubject.ebookCount)
+
     }
 
 
