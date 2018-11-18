@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Subject {
+class Subject : Codable {
     var subjectType: String
     var name : String
     var key : String
@@ -19,5 +19,11 @@ class Subject {
         self.name = name
         self.key = key
         self.ebookCount = ebookCount
+    }
+    enum CodingKeys: String, CodingKey {
+        case subjectType = "subject_type"
+        case name = "name"
+        case key = "key"
+        case ebookCount = "ebook_count"        
     }
 }
